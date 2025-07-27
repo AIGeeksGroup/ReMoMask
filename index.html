@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ReMoMask</title>
+    <!-- Bootstrap -->
+    <!-- <link rel="stylesheet" href="./static/css/bulma.min.css"> -->
+    <!-- 这个不能加，否则会报错 -->
+    <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+    <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./static/js/bulma-carousel.min.js"></script>
+    <script src="./static/js/bulma-slider.min.js"></script>
+    <script src="./static/js/index.js"></script>
+</head>
+
+<!-- cover -->
+<section>
+    <div class="jumbotron text-center mt-0">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <h3><strong>ReMoMask: </strong>Retrieval-Augmented Masked Motion Generation</h3>
+                    <!-- <h5>Arxiv 2026</h5> -->
+                    <hr style="margin-top:0px">
+                    <div class="is-size-2 publication-authors text-center">
+                        <span class="author-block">
+                            <a href=""><strong>Zhengdao Li</strong></a><sup>1*</sup></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="author-block">
+                            <a href=""><strong>Siheng Wang</strong></a><sup>2*</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </span>
+                        <span class="author-block">
+                            <a href="https://steve-zeyu-zhang.github.io/"><strong>Zeyu Zhang</strong></a><sup>1*†</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </span>
+                        <span class="author-block">
+                            <a href="https://ha0tang.github.io/"><strong>Hao Tang</strong></a><sup>1‡</sup>&nbsp;&nbsp;&nbsp;&nbsp;
+                        </span>
+                    </div>
+                    <div class="is-size-5 publication-authors text-center" style="margin-top:2px">
+                        <span class="author-block"><sup>1</sup><strong>Peking University</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span class="author-block"><sup>2</sup><strong>Jiangsu University</strong></span>&nbsp;&nbsp;&nbsp;&nbsp;
+                        <!-- <br> -->
+                        <!-- <span class="author-block"><sup>+</sup><strong>Corresponding author: Xiaowei Zhou.</strong></span> -->
+                    </div>
+                    <p style="color: rgb(51, 51, 51); font-size: 0.8em; margin-top:2px">
+                        <sup>*</sup>Equal contribution. <sup>†</sup>Project lead. <sup>‡</sup>Corresponding author.
+                    </p>
+                    <br>
+                    <div class="row justify-content-center">
+                        <div class="col-auto" style="padding: 0 1px;">
+                            <p class="mb-5"><a class="btn btn-large btn-light" href="arxiv.com" role="button" target="_blank">
+                                <i class="fa fa-file-o"></i> Paper </a></p>
+                        </div>
+                        <div class="col-auto" style="padding: 0 1px;">
+                            <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/" role="button" target="_blank">
+                                <i class="fa fa-github"></i> Code </a></p>
+                        </div>
+                        <div class="col-auto" style="padding: 0 1px;">
+                            <p class="mb-5"><a class="btn btn-large btn-light" href="https://huggingface.co" role="button" target="_blank">
+                                <i class="fa fa-desktop"></i> Model </a></p>
+                        </div>
+                    </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <video width="100%" playsinline autoplay loop preload="none" muted controls>
+                    <source src="assets/teaser.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <br><br>
+                <div class="notification is-info is-rounded" style="background-color: #E8EEEF; padding: 20px; text-align: left;">
+                    <h6 style="color: rgb(0, 0, 0); margin-bottom: 10px;">
+                        <strong>TLDR: </strong>
+                        ReMoMask is a retrieval-augmented masked text-to-motion generation model that enhances retrieval precision, improves temporal-spatial alignment, and achieves state-of-the-art performance on motion generation benchmarks.
+                    </h6>
+                    <h6 style="color: rgb(0, 0, 0); margin: 10px 0;">
+                        <li style="margin-bottom: 5px;">🔁 <strong>Bidirectional Momentum Contrastive Learning</strong>: Enables larger negative sample pools to boost retrieval quality beyond batch-size limitations.</li>
+                        <li style="margin-bottom: 5px;">🧠 <strong>Semantic Spatial-Temporal Attention (SSTA)</strong>: Fuses retrieved motion and text features with part-level spatiotemporal awareness to improve coherence and realism.</li>
+                        <li style="margin-bottom: 5px;">⚡ <strong>Efficient & High-Quality Motion Generation</strong>: Built on RVQ-VAE, ReMoMask achieves strong zero-shot performance on HumanML3D and KIT-ML with fewer decoding steps.</li>
+                    </h6>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Method</h3>
+                <hr style="margin-top:0px">
+                <img src="assets/model.png" width="100%">
+                <p class="text-left">
+                    In MoMask, a hierarchical quantization scheme is employed to represent human motion as multi-layer discrete motion tokens with high-fidelity details. Starting at the base layer, with a sequence of motion tokens obtained by vector quantization, the residual tokens of increasing orders are derived and stored at the subsequent layers of the hierarchy. This is consequently followed by two distinct bidirectional transformers. For the base-layer motion tokens, a Masked Transformer is designated to predict randomly masked motion tokens conditioned on text input at training stage. During generation (i.e. inference) stage, starting from an empty sequence, our Masked Transformer iteratively fills up the missing tokens; Subsequently, a Residual Transformer learns to progressively predict the next-layer tokens based on the results from current layer. 
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<br>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Qualitative Results</h3>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <!-- 16 video blocks -->
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="assets/demo1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<br>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <h4>Citation</h4>
+            <hr style="margin-top:0px">
+            <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
+<code>@inproceedings{zhang2025motion,
+  title={Motion Mamba: Efficient and Long Sequence Motion Generation},
+  author={Zhang, Zeyu and Liu, Akide and Reid, Ian and Hartley, Richard and Zhuang, Bohan and Tang, Hao},
+  booktitle={European Conference on Computer Vision},
+  pages={265--282},
+  year={2025},
+  organization={Springer}
+}</code></pre>
+            <hr>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
