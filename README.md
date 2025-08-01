@@ -30,7 +30,7 @@ pip install torch==2.1.0 torchvision==0.16.0 torchaudio==2.1.0 --index-url https
 pip install -r requirements.txt
 conda activate remomask
 ```
-we trained our RAG model on A800, and t2m model on H20.
+We tested our environment on both A800 and H20.
 
 ## Dependencies
 ### 1. Download the pretrained models
