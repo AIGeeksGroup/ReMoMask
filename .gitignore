@@ -1,0 +1,44 @@
+# 忽略网络缓存文件
+local_tokenizer/
+siheng/
+
+# 忽略 models 权重
+checkpoints/
+Part_TMR/checkpoints*
+
+# 忽略 pretrian model 的权重
+logs/
+
+# 忽略 datasets 和 rag_databse
+database/
+database_bck/
+dataset/HumanML3D/new_joint_vecs
+dataset/HumanML3D/new_joints
+dataset/HumanML3D/texts
+dataset/HumanML3D/tmp
+dataset/HumanML3D/TOKENS
+dataset/HumanML3D/*.py
+dataset/HumanML3D/*.txt
+dataset/HumanML3D/*.npy
+moco_database/
+
+# 忽略生成结果文件夹
+files/
+outputs/
+
+# 忽略下载和上传资源的目录
+
+# Python bytecode cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+# 忽略debug文件
+log/
+报错日志.txt
+报错日志2.txt
+训练运行日志.txt
+文章写作/
+

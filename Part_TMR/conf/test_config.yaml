@@ -1,0 +1,23 @@
+exp_name: exp1
+checkpoints_dir: ./Part_TMR/checkpoints/${exp_name}/${dataset.dataset_name}
+
+hydra:
+  run:
+    dir: ./Part_TMR/checkpoints/${exp_name}/${dataset.dataset_name}/test/
+
+defaults:
+  - _self_
+  - dataset: HumanML3D
+
+preprocess:
+  padding: true
+
+model:
+  text_encoder: distilbert-base-uncased
+
+train:
+  batch_size: 128
+
+eval:
+  eval_train: false
+  use_best_model: true
