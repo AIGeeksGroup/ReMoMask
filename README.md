@@ -9,7 +9,7 @@ This is the official repository for the paper:
 >
 > ### [Paper]() | [HF Paper]()
 
-# Citation
+# ✏️ Citation
 
 ---
 
