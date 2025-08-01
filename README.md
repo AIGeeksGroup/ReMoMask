@@ -3,11 +3,17 @@
 This is the official repository for the paper:
 > **ReMoMask: Retrieval-Augmented Masked Motion Generation**
 >
-> Jingwei Shi\*, [Zeyu Zhang](https://steve-zeyu-zhang.github.io/)\*<sup>†</sup>, Biao Wu\*, Yanjie Liang\*, Meng Fang, Ling Chen, and [Yang Zhao](https://yangyangkiki.github.io/)<sup>#</sup>
+> Zhengdao Li\*, Siheng Wang\*, [Zeyu Zhang](https://steve-zeyu-zhang.github.io/)\*<sup>†</sup>, and [Hao Tang](https://ha0tang.github.io/)<sup>#</sup>
 >
 > \*Equal contribution. <sup>†</sup>Project lead. <sup>#</sup>Corresponding author.
 >
-> ### [Paper](https://arxiv.org/abs/2507.04036) | [Colab Demo](https://colab.research.google.com/drive/1_2buwbVY6RLoi9NdjXihCOTWoEdL70Fk?usp=sharing) | [Data](https://huggingface.co/datasets/AIGeeksGroup/Doc2Present) | [HF Paper](https://huggingface.co/papers/2507.04036)
+> ### [Paper]() | [HF Paper]()
+
+# Citation
+
+---
+
+# 👋 Introduction
 
 Text-to-Motion (T2M) generation aims to synthesize realistic and semantically aligned human motion sequences from natural language descriptions. However, current approaches face dual challenges: Generative models (e.g., diffusion models) suffer from limited diversity, error accumulation, and physical implausibility, while Retrieval-Augmented Generation (RAG) methods exhibit diffusion inertia, partial-mode collapse, and asynchronous artifacts. To address these limitations, we propose **ReMoMask**, a unified framework integrating three key innovations: 1) A **Bidirectional Momentum Text-Motion Model** decouples negative sample scale from batch size via momentum queues, substantially improving cross-modal retrieval precision; 2) A **Semantic Spatiotemporal Attention mechanism** enforces biomechanical constraints during part-level fusion to eliminate asynchronous artifacts; 3) **RAG-Classier-Free Guidance** incorporates minor unconditional generation to enhance generalization. Built upon MoMask's RVQ-VAE, ReMoMask efficiently generates temporally coherent motions in minimal steps. Extensive experiments on standard benchmarks, including HumanML3D, demonstrate state-of-the-art performance, with the FID score significantly improved to **0.095** compared to SOTA RAG-t2m method.
 
