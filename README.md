@@ -22,7 +22,8 @@ Text-to-Motion (T2M) generation aims to synthesize realistic and semantically al
 
 # 🤗 Prerequisite
 <details> 
-
+<summary>details</summary>
+  
 ## Environment
 ```bash
 conda create -n remomask python=3.10
@@ -50,7 +51,8 @@ Follow the instruction in [HumanML3D](https://github.com/EricGuo5513/HumanML3D.g
 
 # 🚀 Demo
 <details> 
-
+<summary>details</summary>
+  
 ```bash
 python demo.py --gpu_id 0 --ext exp1 --text_prompt "A person is walking on a circle." --checkpoints_dir logs --dataset_name humanml3d --mtrans_name pretrain_mtrans --rtrans_name pretrain_rtrans
 # change pretrain_mtrans and pretrain_rtrans to your mtrans and rtrans after your training done
@@ -65,7 +67,8 @@ output will be in `./outputs/exp1/`
 
 # 🛠️ Train your own models
 <details>
-
+<summary>details</summary>
+  
 ## stage1: train a Part-Level BMM Retriever
 ```bash
 python -m Part_TMR.scripts.train
@@ -103,7 +106,8 @@ bash run_rtrans.sh rtrans 2 humanml3d --batch_size 64 --vq_name vq --cond_drop_p
 
 # 💪 Evalution
 <details>
-
+<summary>details</summary>
+  
 ## Evaluate the RAG  
 ```bash 
 python -m Part_TMR.scripts.test
@@ -143,10 +147,11 @@ python eval_res.py --gpu_id 0 --dataset_name kit --mtrans_name pretrain_mtrans_k
 
 # 🤖 Visualization
 <details>
-
+<summary>details</summary>
+  
 ## 1. download and set up blender
 <details>
-
+<summary>details</summary>
 You can download the blender from [instructions](https://www.blender.org/download/lts/2-93/). Please install exactly this version. For our paper, we use `blender-2.93.18-linux-x64`. 
 > 
 ### a. unzip it:
