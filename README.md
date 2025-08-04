@@ -227,6 +227,6 @@ We sincerely thank the open-sourcing of these works where our code is based on:
 [ReMoGPT](https://ojs.aaai.org/index.php/AAAI/article/view/33044)
 
 ## 🔒 License
-This code is distributed under an [MIT LICENSE](LICENSE).
+This code is distributed under an [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en).
 
 Note that our code depends on other libraries, including CLIP, SMPL, SMPL-X, PyTorch3D, and uses datasets that each have their own respective licenses that must also be followed.
