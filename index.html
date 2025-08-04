@@ -59,13 +59,13 @@
                                 <i class="fa fa-file-o"></i> Paper </a></p>
                         </div>
                         <div class="col-auto" style="padding: 0 1px;">
-                            <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/" role="button" target="_blank">
+                            <p class="mb-5"><a class="btn btn-large btn-light" href="https://github.com/AIGeeksGroup/ReMoMask" role="button" target="_blank">
                                 <i class="fa fa-github"></i> Code </a></p>
                         </div>
-                        <div class="col-auto" style="padding: 0 1px;">
+                        <!-- <div class="col-auto" style="padding: 0 1px;">
                             <p class="mb-5"><a class="btn btn-large btn-light" href="https://huggingface.co" role="button" target="_blank">
                                 <i class="fa fa-desktop"></i> Model </a></p>
-                        </div>
+                        </div> -->
                     </div>
         </div>
     </div>
@@ -76,7 +76,7 @@
         <div class="row">
             <div class="col-12 text-center">
                 <video width="100%" playsinline autoplay loop preload="none" muted controls>
-                    <source src="assets/teaser.mp4" type="video/mp4">
+                    <source src="assets/Animation.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
                 <br><br>
@@ -105,9 +105,9 @@
             <div class="col-12 text-center">
                 <h3>Method</h3>
                 <hr style="margin-top:0px">
-                <img src="assets/model.png" width="100%">
+                <img src="assets/framework_00.png" width="100%">
                 <p class="text-left">
-                    In MoMask, a hierarchical quantization scheme is employed to represent human motion as multi-layer discrete motion tokens with high-fidelity details. Starting at the base layer, with a sequence of motion tokens obtained by vector quantization, the residual tokens of increasing orders are derived and stored at the subsequent layers of the hierarchy. This is consequently followed by two distinct bidirectional transformers. For the base-layer motion tokens, a Masked Transformer is designated to predict randomly masked motion tokens conditioned on text input at training stage. During generation (i.e. inference) stage, starting from an empty sequence, our Masked Transformer iteratively fills up the missing tokens; Subsequently, a Residual Transformer learns to progressively predict the next-layer tokens based on the results from current layer. 
+                    In ReMoMask, a unified framework integrating three key innovations: (1) A Bidirectional Momentum Text-Motion Model decouples negative sample scale from batch size via momentum queues, substantially improving cross-modal retrieval precision; (2) A Semantic Spatiotemporal Attention mechanism enforces biomechanical constraints during part-level fusion to eliminate asynchronous artifacts; (3) RAG-Classier-Free Guidance incorporates minor unconditional generation to enhance generalization.
                 </p>
             </div>
         </div>
@@ -126,118 +126,118 @@
                     <!-- 16 video blocks -->
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoA/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a man is pretending to be a chicken. constantly pecking at the ground and waving his arms like a chicken.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoB/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a man is walking forward, favoring his left leg and shifting his walk. he is possibly drunk.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading ="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/demo/joints/demoC/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a man kicks something or someone with his left leg.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoD/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
-                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
-                    </div>
-
-                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
-                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
-                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
-                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
-                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person is looking around, turns to the left, then looks around again.</p>
                     </div>
 
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoE/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">A person is walking on a circle.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoF/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person jumps forward three times and then walks a few steps.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoG/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person jumps forward with both legs and the continues walking until reaching the other side.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoH/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person raises its arms then puts them back down 3 times.</p>
                     </div>
 
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoI/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a_person_raises_their_arms_towards_their_shoulders.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoJ/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a_person_walks_forward_then_turns_to_the_right_and_continues_to_walk.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoK/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a_person_walks_slowly_forward_then_toward_the_left_hand_side_and_stands_facing_that_direction.</p>
                     </div>
                     <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
                         <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
-                            <source src="assets/demo1.mp4" type="video/mp4">
+                            <source src="./assets/demo/joints/demoL/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">This person walks forward, turns then walks back.</p>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a_person_walks_to_the_right_in_a_partial_circle.</p>
+                    </div>
+
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/demo/joints/demoM/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person walks toward the front, turns to the right, bounces into a squat , and places both arms.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/demo/joints/demoN/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">person lifts their hands up twice on the same spot.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/demo/joints/demoO/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">person turns one direction then other direction standing feet apart and arms side to side.</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/demo/joints/demoP/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">someone working on the construction site.</p>
                     </div>
                 </div>
             </div>
@@ -247,6 +247,151 @@
 
 
 <br>
+
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h3>Compare Results</h3>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <!-- 16 video blocks -->
+                <h10>ReMoMask</h10>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a man walks forwards and then stops.</p>
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remomask/joints/demoA/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person is balancing on something.</p>
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remomask/joints/demoB/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a person walks forward in a clumsy way.</p>
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remomask/joints/demoC/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <p class="text-left" style="font-size: 0.9rem; margin-top: 5px;">a_person_walks_forward_rather_slowly.</p>
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remomask/joints/demoD/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                     
+                    </div>
+
+                <h10>MoGenTS</h10>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/mogents/joints/demoA/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/mogents/joints/demoB/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                      
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/mogents/joints/demoC/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                     
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/mogents/joints/demoD/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                     
+                    </div>
+
+                <h10>ReMoDiffuse</h10>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remodiffuse/joints/demoA/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remodiffuse/joints/demoB/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+            
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remodiffuse/joints/demoC/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                       
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/Remodiffuse/joints/demoD/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                    </div>
+                <h10>TMR</h10>
+                <hr style="margin-top:0px">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/TMR/joints/demoA/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/TMR/joints/demoB/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                      
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/TMR/joints/demoC/sample0_repeat0_len196_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                    <div class="col-md-3 col-sm-6 mb-4" style="padding: 10px;">
+                        <video class="single_image_video" controls loading="lazy" autoplay muted loop playsinline style="width: 100%; border-radius: 6px;">
+                            <source src="./assets/compare/TMR/joints/demoD/sample0_repeat0_len112_mesh.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<bar>
 
 
 <div class="container">
@@ -270,5 +415,13 @@
 
 
 
+</script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('p.text-left').forEach(function(p) {
+        p.textContent = p.textContent.replace(/_/g, ' ');
+      });
+    });
+  </script>
 </body>
 </html>
