@@ -1,4 +1,4 @@
-# ReMoMask: Retrieval-Augmented Masked Motion Generation<br>
+# <img src="./assets/remomask_logo.png" alt="logo" width="30"/> ReMoMask: Retrieval-Augmented Masked Motion Generation<br>
 
 This is the official repository for the paper:
 > **ReMoMask: Retrieval-Augmented Masked Motion Generation**
