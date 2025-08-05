@@ -15,6 +15,15 @@ https://github.com/user-attachments/assets/3f29c0c5-abb8-4fd1-893c-48ac82b79532
 
 # ✏️ Citation
 
+```
+@article{li2025remomask,
+  title={ReMoMask: Retrieval-Augmented Masked Motion Generation},
+  author={Li, Zhengdao and Wang, Siheng and Zhang, Zeyu and Tang, Hao},
+  journal={arXiv preprint arXiv:2508.02605},
+  year={2025}
+}
+```
+
 ---
 
 # 👋 Introduction
