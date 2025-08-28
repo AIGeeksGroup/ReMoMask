@@ -7,7 +7,7 @@ This is the official repository for the paper:
 >
 > \*Equal contribution. <sup>†</sup>Project lead. <sup>#</sup>Corresponding author.
 >
-> ### [Paper](https://arxiv.org/abs/2508.02605) | [Website](https://aigeeksgroup.github.io/ReMoMask) | [HF Paper](https://huggingface.co/papers/2508.02605)
+> ### [Paper](https://arxiv.org/abs/2508.02605) | [Website](https://aigeeksgroup.github.io/ReMoMask) | [Model](https://huggingface.co/AIGeeksGroup/ReMoMask) | [HF Paper](https://huggingface.co/papers/2508.02605)
 
 
 https://github.com/user-attachments/assets/3f29c0c5-abb8-4fd1-893c-48ac82b79532
@@ -32,6 +32,13 @@ Text-to-Motion (T2M) generation aims to synthesize realistic and semantically al
 
 
 ![framework](./assets/framework.png)
+
+## TODO List
+
+- [x] Upload our paper to arXiv and build project pages.
+- [x] Upload the code.
+- [x] Release TMR model.
+- [ ] Release T2M model.
 
 # 🤗 Prerequisite
 <details> 
