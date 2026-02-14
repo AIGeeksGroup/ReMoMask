@@ -1,0 +1,60 @@
+exp_name: exp_for_mtrans
+checkpoints_dir: ./Part_TMR/checkpoints/${exp_name}/${dataset.dataset_name}
+device: cuda:4 
+
+hydra:
+  run:
+    dir: ./Part_TMR/checkpoints/${exp_name}/${dataset.dataset_name}  # hydra 快照保存路径
+
+defaults:
+  - _self_
+  - dataset: HumanML3D
+  - train: train
+
+rag:
+  database_path: database  # database used for RAG 
+  num_retrieval: 10  # candidate pool
+  top_k: 1  # retrival k motions per caption, top_k <= num_retrieval
+  use_shuffle: false  # If use_shuffle=true, it shuffles the candidates pool before taking the top-k
+
+preprocess:
+  padding: true
+
+model:
+  # text_encoder: distilbert-base-uncased
+  text_encoder: ViT-B-32.pt
+  
+  # HBM Loss Configuration
+  use_hbm_loss: true        # Enable HBM loss (set to false for baseline)
+  lambda_part: 1.0          # Weight for part-level loss (λ_P)
+  temperature: 0.07         # InfoNCE temperature (τ)
+  
+  # Architecture
+  embed_dim: 512
+  queue_size: 65536         # Queue size for instance-level
+  part_queue_size: 65536    # Queue size for part-level (can be different)
+  momentum: 0.999           # Momentum for EMA update
+  
+  # Projection
+  motion_embedding_dims: 512
+  text_embedding_dims: 512
+  projection_dims: 512
+  dropout: 0.5
+
+# train:
+#   batch_size: 128
+#   epoch: 200 # original: 200
+#   optimizer:
+#     motion_lr: 1.0e-05
+#     text_lr: 1.0e-05
+#     head_lr: 1.0e-05
+#   train_text_encoder: false
+#   seed: 42
+  
+#   # Logging
+#   log_interval: 100
+#   log_loss_components: true  # Log individual loss components
+
+eval:
+  eval_train: false
+  use_best_model: true
