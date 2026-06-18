@@ -7,6 +7,8 @@ This is the official repository for the paper:
 >
 > \*Equal contribution. <sup>†</sup>Project lead. <sup>#</sup>Corresponding author.
 >
+> ***ECCV 2026***
+>
 > ### [Paper](https://arxiv.org/abs/2508.02605) | [Website](https://aigeeksgroup.github.io/ReMoMask) | [Model](https://huggingface.co/AIGeeksGroup/ReMoMask) | [HF Paper](https://huggingface.co/papers/2508.02605)
 
 
