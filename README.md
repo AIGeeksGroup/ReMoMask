@@ -40,7 +40,7 @@ Text-to-Motion (T2M) generation aims to synthesize realistic and semantically al
 - [x] Upload our paper to arXiv and build project pages.
 - [x] Upload the code.
 - [x] Release TMR model.
-- [ ] Release T2M model.
+- [x] Release T2M model.
 
 # 🤗 Prerequisite
 <details> 
