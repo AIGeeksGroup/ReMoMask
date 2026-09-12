@@ -1,5 +1,9 @@
 # <img src="./assets/remomask_logo.png" alt="logo" width="30"/> ReMoMask: Retrieval-Augmented Masked Motion Generation<br>
 
+> [!NOTE]
+> [**ReMoMask-2**](https://aigeeksgroup.github.io/ReMoMask-2/) is out! Latent-aligned retrieval enables stronger motion generation in a single, faster mask-transformer stage. 🚀
+
+
 This is the official repository for the paper:
 > **ReMoMask: Retrieval-Augmented Masked Motion Generation**
 >
